@@ -1,0 +1,23 @@
+<table class="table table-striped table-templates">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each templates}}
+    <tr>
+      <td class="name">
+        <img class="icon" alt="Icon" src="{{dashicon}}" />
+        {{value.title}}
+      </td>
+      <td>{{id}}</td>
+      <td>{{value.description}}</td>
+      <td>{{value.version}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

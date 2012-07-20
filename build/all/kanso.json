@@ -1,0 +1,20 @@
+{
+    "name": "library",
+    "description": "CouchApp template library",
+    "version": "0.0.1",
+    "attachments": [
+        "index.html",
+        "jam",
+        "css",
+        "img"
+    ],
+    "modules": [
+        "ddoc.js"
+    ],
+    "load": "ddoc",
+    "dependencies": {
+        "attachments": null,
+        "modules": null,
+        "properties": null
+    }
+}
