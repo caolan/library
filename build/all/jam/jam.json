@@ -10,7 +10,6 @@
         "jquery": null,
         "underscore": null,
         "director": null,
-        "events": null,
-        "url": null
+        "events": null
     }
 }

@@ -49,19 +49,9 @@ var jam = {
             "main": "events.js"
         },
         {
-            "name": "url",
-            "location": "jam/url",
-            "main": "url.js"
-        },
-        {
             "name": "text",
             "location": "jam/text",
             "main": "text.js"
-        },
-        {
-            "name": "querystring",
-            "location": "jam/querystring",
-            "main": "querystring.js"
         }
     ],
     "version": "0.1.14",

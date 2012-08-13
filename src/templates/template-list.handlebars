@@ -12,11 +12,15 @@
     <tr>
       <td class="name">
         <img class="icon" alt="Icon" src="{{dashicon}}" />
-        {{value.title}}
+        {{#if value.dashboard.title}}
+          {{value.dashboard.title}}
+        {{else}}
+          {{id}}
+        {{/if}}
       </td>
       <td>{{id}}</td>
-      <td>{{value.description}}</td>
-      <td>{{value.version}}</td>
+      <td>{{value.dashboard.description}}</td>
+      <td>{{value.dashboard.version}}</td>
     </tr>
     {{/each}}
   </tbody>

@@ -1,3 +1,17 @@
+exports.dashboard = {
+    title: 'Library',
+    version: '0.0.1',
+    description: "CouchApp template library",
+    icons: {
+        '16': 'img/icons/icon_16.png',
+        '22': 'img/icons/icon_22.png',
+        '48': 'img/icons/icon_48.png',
+        '96': 'img/icons/icon_96.png',
+        '128': 'img/icons/icon_128.png'
+    }
+};
+
+
 exports.rewrites = [
     // fake the db-level api for pushing design docs,
     // stripping the leading '_design/' part of the id
@@ -12,11 +26,40 @@ exports.rewrites = [
 ];
 
 
+exports.shows = {
+    jsonp: function (doc, req) {
+        return req.query.callback + '(' + JSON.stringify(doc) + ');';
+    }
+};
+
+
+exports.lists = {
+    jsonp: function (head, req) {
+        start({
+            code: 200,
+            headers: {'Content-Type': 'application/javascript'}
+        });
+        send(
+            req.query.callback + '(' +
+            '{ total_rows: ' + head.total_rows +
+            ', offset: ' + head.offset +
+            ', rows: ['
+        );
+        var row, first = true;
+        while (row = getRow()) {
+            send((first ? '': ', ') + JSON.stringify(row));
+            first = false;
+        }
+        return ' ] });';
+    }
+};
+
+
 exports.views = {
     templates: {
         map: function (doc) {
             if (doc.dashboard) {
-                emit(doc._id, doc.dashboard);
+                emit(doc._id, {rev: doc._rev, dashboard: doc.dashboard});
             }
         }
     }

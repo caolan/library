@@ -1,0 +1,18 @@
+{
+    "jam": {
+        "packageDir": "src/jam",
+        "baseUrl": "src",
+        "dependencies": {
+            "bootstrap": null,
+            "font-awesome": null,
+            "handlebars": null,
+            "hbt": null,
+            "couchr": "linked",
+            "async": null,
+            "jquery": null,
+            "underscore": null,
+            "director": null,
+            "events": null
+        }
+    }
+}

@@ -27,7 +27,7 @@ function (require, $, _) {
             }
             var templates = _.map(data.rows, function (r) {
                 r.dashicon = 'api/' + encodeURIComponent(r.id) + '/' +
-                    r.value.icons['22'];
+                    r.value.dashboard.icons['22'];
                 return r;
             });
             $('#template-list').html(
